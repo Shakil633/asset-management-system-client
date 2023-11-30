@@ -23,7 +23,7 @@ const UserUpdateProfile = () => {
     };
     console.log(updateData);
 
-    fetch(`http://localhost:5050/users/${_id}`, {
+    fetch(`https://asset-management-system-server-xi.vercel.app/users/${_id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

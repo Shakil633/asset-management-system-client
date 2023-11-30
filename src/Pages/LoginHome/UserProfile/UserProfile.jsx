@@ -12,7 +12,9 @@ const UserProfile = () => {
 
   const [update, setUpdate] = useState();
   useEffect(() => {
-    fetch(`http://localhost:5050/userProfile/${user?.email}`)
+    fetch(
+      `https://asset-management-system-server-xi.vercel.app/userProfile/${user?.email}`
+    )
       .then((res) => res.json())
       .then((data) => setUpdate(data));
   }, [user?.email]);

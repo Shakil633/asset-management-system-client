@@ -19,13 +19,17 @@ const AssetListUpdate = () => {
 
     const addUpdate = { name, type, productQuantity, date, stock, assetType };
 
-    fetch(`http://localhost:5050/assetUpdate/${_id}`, {
-      method: "PUT",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(addUpdate),
-    })
+    fetch(
+      `https://asset-management-system-server-xi.vercel.app
+/assetUpdate/${_id}`,
+      {
+        method: "PUT",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(addUpdate),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

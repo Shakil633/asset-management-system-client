@@ -20,13 +20,16 @@ const AddEmployee = () => {
       // Exclude the _id field from the data sent to MongoDB
       const { _id: omitId, ...employeeData } = employeeToAdd;
 
-      const response = await fetch("http://localhost:5050/adminAdd", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(employeeData),
-      });
+      const response = await fetch(
+        "https://asset-management-system-server-xi.vercel.app/adminAdd",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(employeeData),
+        }
+      );
 
       if (response.ok) {
         toast.success("Employee added successfully");

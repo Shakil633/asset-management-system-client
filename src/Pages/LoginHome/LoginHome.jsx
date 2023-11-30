@@ -8,7 +8,7 @@ const LoginHome = () => {
   const modalRef = useRef(null);
 
   useEffect(() => {
-    fetch("http://localhost:5050/requestsCustom")
+    fetch("https://asset-management-system-server-xi.vercel.app/requestsCustom")
       .then((res) => res.json())
       .then((data) => setRequastData(data));
   }, []);

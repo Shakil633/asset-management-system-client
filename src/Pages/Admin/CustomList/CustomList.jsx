@@ -2,8 +2,6 @@
 // import { useEffect, useState } from "react";
 // import { Helmet } from "react-helmet-async";
 
-
-
 // const CustomList = () => {
 //   // State variables
 //   const [allData, setAllData] = useState([]);
@@ -13,7 +11,7 @@
 //   // Fetch data from the server
 //   const fetchData = async () => {
 //     try {
-//       const response = await axios.get("http://localhost:5050/requestsCustom");
+//       const response = await axios.get("https://asset-management-system-server-xi.vercel.app/requestsCustom");
 //       console.log("Response:", response.data);
 //       setAllData(response.data);
 //       setLoading(false);
@@ -43,7 +41,7 @@
 //       console.log("Update Data:", updateData);
 
 //       const response = await axios.put(
-//         `http://localhost:5050/requestsCustom/${requestId}`,
+//         `https://asset-management-system-server-xi.vercel.app/requestsCustom/${requestId}`,
 //         updateData
 //       );
 
@@ -145,7 +143,9 @@ const CustomList = () => {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get("http://localhost:5050/requestsCustom");
+      const response = await axios.get(
+        "https://asset-management-system-server-xi.vercel.app/requestsCustom"
+      );
       console.log("Response:", response.data);
       setAllData(response.data);
       setLoading(false);
@@ -172,7 +172,8 @@ const CustomList = () => {
       console.log("Update Data:", updateData);
 
       const response = await axios.put(
-        `http://localhost:5050/requestsCustom/${_id}`,
+        `https://asset-management-system-server-xi.vercel.app
+/requestsCustom/${_id}`,
         updateData
       );
 

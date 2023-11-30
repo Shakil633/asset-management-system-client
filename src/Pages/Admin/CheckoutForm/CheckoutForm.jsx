@@ -3,24 +3,32 @@ import { useContext, useEffect, useState } from "react";
 import { ImSpinner9 } from "react-icons/im";
 import { AuthContext } from "../../../Component/Provider/AuthProvider";
 import axios from "axios";
-const CheckoutForm = ({ packageInfo, handleClose }) => {
+import { useNavigate } from "react-router-dom";
 
+const CheckoutForm = ({ packageInfo, handleClose }) => {
   console.log(packageInfo);
 
   const stripe = useStripe();
   const elements = useElements();
-  const { user } = useContext(AuthContext)
+  const { user } = useContext(AuthContext);
 
   const [cardError, setCardError] = useState("");
   const [clientSecret, setClientSecret] = useState("");
   const [processing, setProcessing] = useState(false);
 
+  const nav = useNavigate();
+
   // Create Payment Intent
 
   useEffect(() => {
     if (packageInfo?.price > 0)
-       axios
-        .post("http://localhost:5050/create-payment-intent", { price: packageInfo?.price })
+      axios
+        .post(
+          "https://asset-management-system-server-xi.vercel.app/create-payment-intent",
+          {
+            price: packageInfo?.price,
+          }
+        )
         .then((res) => {
           console.log(res.data);
           setClientSecret(res.data);
@@ -77,9 +85,10 @@ const CheckoutForm = ({ packageInfo, handleClose }) => {
 
       console.log(paymentIntent.status);
 
-      axios
-        .patch(`admin/extend-employee-limit/${user.email}`, { limit })
-        .then((res) => console.log(res.data));
+      // axios
+      //   .patch(`admin/extend-employee-limit/${user.email}`, { limit })
+      //   .then((res) => console.log(res.data));
+      nav("/");
 
       setProcessing(false);
     }

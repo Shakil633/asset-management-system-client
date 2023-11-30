@@ -13,7 +13,7 @@ const AssetList = () => {
   const [sortOrder, setSortOrder] = useState("asc");
 
   useEffect(() => {
-    fetch("http://localhost:5050/assetAdd")
+    fetch("https://asset-management-system-server-xi.vercel.app/assetAdd")
       .then((res) => res.json())
       .then((data) => setInitialData(data));
   }, []);
@@ -76,9 +76,13 @@ const AssetList = () => {
       });
 
       if (result.isConfirmed) {
-        const response = await fetch(`http://localhost:5050/assetAdd/${id}`, {
-          method: "DELETE",
-        });
+        const response = await fetch(
+          `https://asset-management-system-server-xi.vercel.app
+/assetAdd/${id}`,
+          {
+            method: "DELETE",
+          }
+        );
 
         const data = await response.json();
 

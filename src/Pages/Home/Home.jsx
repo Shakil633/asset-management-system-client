@@ -12,7 +12,7 @@ const Home = () => {
 
   const [admin, setAdmin] = useState();
   useEffect(() => {
-    fetch("http://localhost:5050/users")
+    fetch("https://asset-management-system-server-xi.vercel.app/users")
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

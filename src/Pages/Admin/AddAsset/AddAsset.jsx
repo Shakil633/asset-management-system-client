@@ -15,7 +15,7 @@ const AddAsset = () => {
     const add = { name, type, productQuantity, date, stock, assetType };
     console.log(add);
 
-    fetch("http://localhost:5050/assetAdd", {
+    fetch("https://asset-management-system-server-xi.vercel.app/assetAdd", {
       method: "POST",
       headers: {
         "content-type": "application/json",

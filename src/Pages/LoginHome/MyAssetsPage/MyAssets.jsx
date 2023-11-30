@@ -1,17 +1,3 @@
-// import { useLoaderData } from "react-router-dom";
-
-// const MyAssets = () => {
-//   const myAssetRequest=useLoaderData()
-//   console.log(myAssetRequest);
-
-//   return (
-//     <div>
-
-//     </div>
-//   );
-// };
-
-// export default MyAssets;
 import { useState, useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 import { useLoaderData } from "react-router-dom";
@@ -29,7 +15,8 @@ const MyAsset = () => {
   }, [initialData]);
 
   const handleDelete = (_id) => {
-    const URL = `http://localhost:5050/userRequest/${_id}`;
+    const URL = `https://asset-management-system-server-xi.vercel.app
+/userRequest/${_id}`;
     fetch(URL, {
       method: "DELETE",
     })
@@ -37,7 +24,7 @@ const MyAsset = () => {
       .then((data) => {
         if (data.deletedCount > 0) {
           Swal.fire({
-            position: "top-end",
+            position: "top-center",
             icon: "success",
             title: "Data deleted successfully",
             showConfirmButton: false,
@@ -52,7 +39,7 @@ const MyAsset = () => {
 
   return (
     <>
-     <Helmet>
+      <Helmet>
         <title>Employee || MyAsset</title>
       </Helmet>
       <div className="overflow-x-auto">

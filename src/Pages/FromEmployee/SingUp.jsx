@@ -32,7 +32,7 @@ const SingUp = () => {
     userSingUp(email, password)
       .then(() => {
         updateUserProfile(name, img);
-        fetch("http://localhost:5050/users", {
+        fetch("https://asset-management-system-server-xi.vercel.app/users", {
           method: "POST",
           headers: {
             "content-type": "application/json",

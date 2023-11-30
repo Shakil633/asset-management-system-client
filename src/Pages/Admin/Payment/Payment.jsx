@@ -13,13 +13,13 @@ const Payment = () => {
   };
 
   const [paymentEmail, setPaymentEmail] = useState([]);
-  const { user } = useContext(AuthContext)
-
+  const { user } = useContext(AuthContext);
 
   console.log(paymentEmail);
 
   useEffect(() => {
-    fetch(`http://localhost:5050/userProfile/${user?.email}`)
+    fetch(`https://asset-management-system-server-xi.vercel.app
+/userProfile/${user?.email}`)
       .then((res) => res.json())
       .then((data) => setPaymentEmail(data));
   }, [user?.email]);

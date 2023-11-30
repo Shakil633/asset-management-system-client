@@ -4,7 +4,6 @@ import { AuthContext } from "../../Component/Provider/AuthProvider";
 import { useLocation, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import Navbar from "../../Shear/NavBar/NavBar";
-import axios from "axios";
 
 const LoginPage = () => {
   const { userSingIn } = useContext(AuthContext);
@@ -18,7 +17,7 @@ const LoginPage = () => {
     const password = form.password.value;
 
     userSingIn(email, password)
-      .then((results) => {
+      .then(() => {
         Swal.fire({
           position: "top-center",
           icon: "success",
@@ -27,21 +26,6 @@ const LoginPage = () => {
           timer: 1500,
         });
         navigate(location?.state ? location.state : "/");
-
-        //
-        // const loggedInUser = results.user;
-        // console.log(loggedInUser);
-        // const user = { email };
-        // axios
-        //   .post("http://localhost:5050/jwt", user, {
-        //     withCredentials: true,
-        //   })
-        //   .then((res) => {
-        //     console.log(res.data);
-        //     if (res.data.success) {
-        //       navigate(location?.state ? location.state : "/");
-        //     }
-        //   });
       })
       .catch(() => {
         Swal.fire({

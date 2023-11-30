@@ -21,12 +21,15 @@ import AddEmployee from "../Pages/Admin/AddEmployee/AddEmployee";
 import Team from "../Pages/LoginHome/Team/Team";
 import PrivetRoute from "../Pages/PrivetRoute/PrivetRoute";
 import AdminHome from "../Pages/Admin/AdminHome/AdminHome";
+import Error from "../Component/Error/Error";
 
 const Route = createBrowserRouter([
   {
     path: "/",
     element: <Main></Main>,
-    loader: () => fetch("http://localhost:5050/users"),
+    errorElement: <Error></Error>,
+    loader: () =>
+      fetch("https://asset-management-system-server-xi.vercel.app/users"),
     children: [
       {
         path: "/",
@@ -40,12 +43,15 @@ const Route = createBrowserRouter([
       {
         path: "/myAssets",
         element: <MyAssets></MyAssets>,
-        loader: () => fetch("http://localhost:5050/userRequest"),
+        loader: () =>
+          fetch(
+            "https://asset-management-system-server-xi.vercel.app/userRequest"
+          ),
       },
       {
         path: "/requestAsset",
         element: <RequestAssetPage></RequestAssetPage>,
-        // loader: () => fetch("http://localhost:5050/assetAdd"),
+        // loader: () => fetch("https://asset-management-system-server-xi.vercel.app/assetAdd"),
       },
       {
         path: "/userProfile",
@@ -59,7 +65,9 @@ const Route = createBrowserRouter([
         path: "/userUpdate/:id",
         element: <UserUpdateProfile></UserUpdateProfile>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5050/users/${params.id}`),
+          fetch(
+            `https://asset-management-system-server-xi.vercel.app/users/${params.id}`
+          ),
       },
       {
         path: "/customRequest",
@@ -86,12 +94,14 @@ const Route = createBrowserRouter([
         path: "/assetListUpdate/:id",
         element: <AssetListUpdate></AssetListUpdate>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5050/assetAdd/${params.id}`),
+          fetch(
+            `https://asset-management-system-server-xi.vercel.app/assetAdd/${params.id}`
+          ),
       },
       {
         path: "/allRequests",
         element: <AllRequest></AllRequest>,
-        // loader:()=> fetch('http://localhost:5050/userRequest')
+        // loader:()=> fetch('https://asset-management-system-server-xi.vercel.app/userRequest')
       },
       {
         path: "/customRequestsList",
@@ -108,12 +118,16 @@ const Route = createBrowserRouter([
       {
         path: "/myEmployeeList",
         element: <MyEmployeeList></MyEmployeeList>,
-        loader: () => fetch("http://localhost:5050/adminAdd"),
+        loader: () =>
+          fetch(
+            "https://asset-management-system-server-xi.vercel.app/adminAdd"
+          ),
       },
       {
         path: "/addEmployee",
         element: <AddEmployee></AddEmployee>,
-        loader: () => fetch("http://localhost:5050/users"),
+        loader: () =>
+          fetch("https://asset-management-system-server-xi.vercel.app/users"),
       },
     ],
   },
