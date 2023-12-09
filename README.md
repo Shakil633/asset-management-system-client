@@ -1,8 +1,28 @@
-# React + Vite
+# [Live Link](https://asset-management-system-48546.web.app/)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Asset Management System
 
-Currently, two official plugins are available:
+## Least features in this project is:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+### Technologies used : 
+- Tailwind CSS, React, Material ui,MongoDB, Node.js, Express.js, JWT token, Firebase,
+React Hook Form, Axios, TanStack Query, Stripe.
+
+
+
